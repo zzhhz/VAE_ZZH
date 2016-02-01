@@ -4,33 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zzh.vae.activity.SurfaceActivity">
-    <LinearLayout
-        android:id="@+id/bar_top"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/del"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="<<"/>
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="||"/>
-        <Button
-            android:id="@+id/add"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=">>"/>
-    </LinearLayout>
-    <SurfaceView
-        android:id="@+id/surfaceView"
+        android:text="测试"
+        />
+    <com.zzh.vae.widget.DragVideoView
+        android:id="@+id/youtube_effect"
+        android:layout_below="@+id/test"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/bar_top"/>
+        android:layout_height="match_parent">
+        <SurfaceView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </com.zzh.vae.widget.DragVideoView>
 </RelativeLayout>
