@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SurfaceActivity"/>
+        <activity android:name=".activity.SurfaceActivity" />
+        <activity android:name=".activity.SlidingActivity"></activity>
     </application>
 
 </manifest>
