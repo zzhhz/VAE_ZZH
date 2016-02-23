@@ -32,13 +32,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * 在子Activity中处理handler
-     *
-     * @param msg
-     */
-    protected abstract void handlerMessage(Message msg);
-
-    /**
      * 初始化控件使用
      */
     protected abstract void initView();
@@ -53,6 +46,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      */
     protected abstract void initSetListener();
 
+    /**
+     * 在子Activity中处理handler
+     *
+     * @param msg
+     */
+    protected abstract void handlerMessage(Message msg);
+
     public class BaseHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
@@ -62,6 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     /**
      * 显示的文字提示信息
+     *
      * @param str
      */
     protected void showMessage(String str) {

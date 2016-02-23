@@ -19,7 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.SurfaceActivity" />
-        <activity android:name=".activity.SlidingActivity" android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.SlidingActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.zzh.html5.activity.Html5Activity"></activity>
     </application>
 
 </manifest>
