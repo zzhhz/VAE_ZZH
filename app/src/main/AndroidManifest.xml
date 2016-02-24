@@ -2,9 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zzh.vae">
 
-    <!--读写SD卡-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 读写SD卡 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -28,7 +33,12 @@
             android:theme="@style/AppTheme" />
         <activity android:name="com.zzh.html5.activity.Html5Activity" />
         <activity android:name="com.zzh.player.PlayerActivity" />
-        <activity android:name="com.zzh.facedetector.FacedetectorActivity"></activity>
+        <activity android:name="com.zzh.facedetector.FacedetectorActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name="com.zzh.player.MediaPlayerActivity" />
+        <activity android:name="com.zzh.image.SelectImgActivity"></activity>
     </application>
 
 </manifest>

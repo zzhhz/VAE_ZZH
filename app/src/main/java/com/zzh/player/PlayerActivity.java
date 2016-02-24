@@ -13,7 +13,7 @@ import com.zzh.vae.utils.SDCardUtils;
 import java.io.File;
 
 /**
- * 视频播放练习
+ * 视频播放练习，使用VideoView播放视频
  */
 public class PlayerActivity extends BaseActivity {
 

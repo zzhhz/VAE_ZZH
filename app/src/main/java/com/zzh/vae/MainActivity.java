@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zzh.html5.activity.Html5Activity;
+import com.zzh.image.SelectImgActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
+        findViewById(R.id.button4).setOnClickListener(this);
     }
 
     @Override
@@ -82,6 +84,12 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent2);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
+            case R.id.button4:
+                Intent intent3 = new Intent(mContext, SelectImgActivity.class);
+                startActivity(intent3);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+
         }
     }
 }
