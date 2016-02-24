@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zzh.html5.activity.Html5Activity;
+import com.zzh.player.PlayerActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends BaseActivity {
     protected void initSetListener() {
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.button3).setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +76,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button2:
                 Intent intent1 = new Intent(mContext, Html5Activity.class);
                 startActivity(intent1);
+                break;
+            case R.id.button3:
+                Intent intent2 = new Intent(mContext, PlayerActivity.class);
+                startActivity(intent2);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
         }
     }
