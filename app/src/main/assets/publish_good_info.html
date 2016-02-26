@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>发布货源信息</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+    <script type="text/javascript" src="js/area.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+function checkform(){
+	var warnstr = "";
+	if($("input[name=fromprovince]").val() == ""){
+		warnstr += "出发地省份没有填写\r\n";
+	}
+	if($("input[name=toprovince]").val() == ""){
+		warnstr += "到达地省份没有填写\r\n";
+	}
+	
+	if(warnstr == ""){
+		scrollTo(0,0);
+		var postr = $("#postform").serialize();
+		window.postinfo.getParameters(postr);
+	}else{
+		alert("表单填写有以下错误：\r\n\r\n"+warnstr);
+	}
+	return false;
+}
+
+$(document).ready(function(){
+	placeSelector($("#ps_from"), "from");
+	placeSelector($("#ps_to"), "to");
+	
+	$("#reset").click(function(){
+	    location.reload();
+		scrollTo(0,0);
+	});	
+});
+
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="form">
+        <form name="postform" id="postform" action="javascript:void(0);"
+              onSubmit="return checkform();" method="post" autocomplete="off">
+            <input type="hidden" name="fromprovince" value="">
+            <input type="hidden" name="fromcity" value="">
+            <input type="hidden" name="fromcounty" value="">
+            <input type="hidden" name="toprovince" value="">
+            <input type="hidden" name="tocity" value="">
+            <input type="hidden" name="tocounty" value="">
+            <ul class="formbody">
+                <li id="ps_from">
+                    <label>出发地：</label>
+                    <table class="place_selector">
+                        <tr>
+                            <td><span label="province">省份</span></td>
+                            <td><span label="city">城市</span></td>
+                            <td><span label="county">区县</span></td>
+                        </tr>
+                    </table>
+                    <div class="placelist"></div>
+                </li>
+                <li id="ps_to">
+                    <label>到达地：</label>
+                    <table class="place_selector">
+                        <tr>
+                            <td><span label="province">省份</span></td>
+                            <td><span label="city">城市</span></td>
+                            <td><span label="county">区县</span></td>
+                        </tr>
+                    </table>
+                    <div class="placelist"></div>
+                </li>
+            </ul>
+            <div class="formfoot">
+                <button type="submit" id="publish" style="margin-bottom:10px;"><span>立即发布</span>
+                </button>
+                <button type="button" id="reset"><span>清空表单</span></button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

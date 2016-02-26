@@ -14,6 +14,9 @@ import android.webkit.WebViewClient;
 import com.zzh.vae.R;
 import com.zzh.vae.base.BaseActivity;
 
+/***
+ * 交互
+ */
 public class Html5Activity extends BaseActivity {
 
     private WebView webView;
@@ -47,7 +50,7 @@ public class Html5Activity extends BaseActivity {
             settings.setLoadsImagesAutomatically(false);
         }
 
-        /**使用本activity打开网页，而不是从浏览器中打开，但是此案例是加载assets资源中的文件，并不联网，所以不用这个也行**/
+        /**使用本activity打开网页，而不是从浏览器中打开，指的是网页中的链接，点击在本webview中打开，而不是使用外部浏览器**/
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -72,7 +75,8 @@ public class Html5Activity extends BaseActivity {
                 Log.e("chrome", "--------" + newProgress);
             }
         });
-
+        settings.setBuiltInZoomControls(true);
+        //webView.addJavascriptInterface();
     }
 
     @Override
@@ -82,7 +86,7 @@ public class Html5Activity extends BaseActivity {
          * file:///android_asset/是固定写法，定位到assets目录。demo1.html目标文件
          *
          * */
-        webView.loadUrl("file:///android_asset/demo1.html");
+        webView.loadUrl("file:///android_asset/publish_good_info.html");
 
     }
 
