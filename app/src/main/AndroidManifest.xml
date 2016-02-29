@@ -38,7 +38,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name="com.zzh.player.MediaPlayerActivity" />
-        <activity android:name="com.zzh.image.SelectImgActivity"></activity>
+        <activity android:name="com.zzh.image.SelectImgActivity" />
+        <activity android:name="com.zzh.qrc.QRCActivity"></activity>
     </application>
 
 </manifest>

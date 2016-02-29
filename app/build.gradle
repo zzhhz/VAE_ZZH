@@ -26,4 +26,6 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile files('lib/nineoldandroids-2.4.0.jar')
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.google.zxing:zxing-parent:3.2.1'
+    compile 'com.google.zxing:core:3.2.1'
 }
