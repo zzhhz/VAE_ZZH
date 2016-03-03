@@ -29,7 +29,7 @@ public class SelectImgActivity extends BaseActivity {
     @Override
     protected void initView() {
         recyclerView_img = (RecyclerView) findViewById(R.id.recyclerView_img);
-        adapter = new SelectImgAdapter();
+        adapter = new SelectImgAdapter(mContext);
         layoutManager = new GridLayoutManager(mContext,3);
         recyclerView_img.setLayoutManager(layoutManager);
         recyclerView_img.setAdapter(adapter);
