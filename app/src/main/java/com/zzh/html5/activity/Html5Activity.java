@@ -15,7 +15,7 @@ import com.zzh.vae.R;
 import com.zzh.vae.base.BaseActivity;
 
 /***
- * 交互
+ * h5和Activity交互
  */
 public class Html5Activity extends BaseActivity {
 
