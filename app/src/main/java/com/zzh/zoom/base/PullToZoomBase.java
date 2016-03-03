@@ -49,10 +49,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         init(context, attrs);
     }
 
-    public PullToZoomBase(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
     /**
      * 初始化方法
      **/
@@ -64,7 +60,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(localDisplayMetrics);
         mScreenHeight = localDisplayMetrics.heightPixels;
         mScreenWidth = localDisplayMetrics.widthPixels;
-
         mRootView = createRootView(context, attrs);
 
         /**属性*/
@@ -138,8 +133,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
                 }
                 break;
         }
-
-
         return mIsBeingDragged;
     }
 
@@ -164,7 +157,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
                     return true;
                 }
                 break;
-
             case MotionEvent.ACTION_DOWN:
                 if (isReadyForPullStart()) {
                     mLastMotionY = mInitialMotionY = event.getY();
@@ -172,7 +164,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
                     return true;
                 }
                 break;
-
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 if (mIsBeingDragged) {
@@ -189,9 +180,7 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
                 }
                 break;
         }
-
-
-        return super.onTouchEvent(event);
+        return false;
     }
 
 
@@ -213,7 +202,8 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
     protected abstract boolean isReadyForPullStart();
     protected abstract void smoothScrollToTop();
     protected abstract T createRootView(Context context, AttributeSet attrs);
-
+    public abstract void setHeaderView(View headerView);
+    public abstract void setZoomView(View zoomView);
     /***
      * IPullToZoom<T>
      **/
@@ -270,20 +260,16 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         return isHideHeader;
     }
 
-    /***
-     * IPullToZoom<T>
-     **/
-    @Override
-    public void handleStyledAttributes(TypedArray ta) {
-
-    }
-
     public void setZoomEnabled(boolean zoomEnabled) {
         isZoomEnabled = zoomEnabled;
     }
 
     public void setZooming(boolean zooming) {
         isZooming = zooming;
+    }
+
+    public void setParallax(boolean isParallax){
+        this.isParallax = isParallax;
     }
 
     public void setHideHeader(boolean hideHeader) {
@@ -293,7 +279,6 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
     //接口回调，监测滑动的距离，和滑动结束
     public interface OnPullZoomListener {
         void onPullZooming(int newScrollValue);
-
         void onPullZoomEnd();
     }
 }

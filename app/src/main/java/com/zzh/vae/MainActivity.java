@@ -14,6 +14,7 @@ import com.zzh.qrc.QRCActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
+import com.zzh.zoom.RecyclerActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -97,8 +98,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent4);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
-            case R.id.button6: //扫描二维码
-
+            case R.id.button6: //测试PullToZoomRecyclerView
+                Intent intent6 = new Intent(mContext, RecyclerActivity.class);
+                startActivity(intent6);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 
         }

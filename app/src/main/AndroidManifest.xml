@@ -39,7 +39,8 @@
             android:label="@string/title_activity_login" />
         <activity android:name="com.zzh.player.MediaPlayerActivity" />
         <activity android:name="com.zzh.image.SelectImgActivity" />
-        <activity android:name="com.zzh.qrc.QRCActivity"></activity>
+        <activity android:name="com.zzh.qrc.QRCActivity" />
+        <activity android:name="com.zzh.zoom.RecyclerActivity"></activity>
     </application>
 
 </manifest>
