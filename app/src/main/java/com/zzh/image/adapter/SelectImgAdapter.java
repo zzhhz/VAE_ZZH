@@ -2,11 +2,18 @@ package com.zzh.image.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.zzh.image.bean.Picture;
 import com.zzh.image.holder.ImgViewHolder;
+import com.zzh.image.loader.ImageLoader;
+import com.zzh.vae.R;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.List;
 
 /**
@@ -18,7 +25,7 @@ public class SelectImgAdapter extends RecyclerView.Adapter<ImgViewHolder>{
     private static final int INT_ADD_IMAGE = 10001; //最后的一张添加的图片
     private Context mContext;
 
-    private List dataList = null;
+    private List<Picture> dataList = null;
 
     public SelectImgAdapter(Context mContext) {
         this.mContext = mContext;
@@ -27,15 +34,24 @@ public class SelectImgAdapter extends RecyclerView.Adapter<ImgViewHolder>{
 
     @Override
     public ImgViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == INT_ADD_IMAGE){
 
-        }
-        return null;
+        /*if (viewType == INT_ADD_IMAGE){
+
+        } else {
+
+        }*/
+
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_image, parent, false);
+        return new ImgViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ImgViewHolder holder, int position) {
+        if ((position+1) == getItemCount()){
+            holder.imageView.setImageResource(R.mipmap.icon_add);
+        } else {
 
+        }
     }
 
     @Override

@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button5).setOnClickListener(this);
         findViewById(R.id.button6).setOnClickListener(this);
         findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button8).setOnClickListener(this);
     }
 
     @Override
@@ -109,6 +110,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button7: //测试PullToZoomRecyclerView
                 Intent intent7 = new Intent(mContext, PullToZoomScrollViewActivity.class);
                 startActivity(intent7);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button8: //测试选择图片
+                Intent intent8 = new Intent(mContext, SelectImgActivity.class);
+                startActivity(intent8);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 

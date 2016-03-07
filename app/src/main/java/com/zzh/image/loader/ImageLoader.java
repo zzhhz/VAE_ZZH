@@ -1,11 +1,8 @@
 package com.zzh.image.loader;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -14,6 +11,7 @@ import android.util.LruCache;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,7 +19,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  * Created by zzh on 2016/3/7.
- * 加载工具类
+ * 加载图片工具类
  */
 public class ImageLoader {
     private static ImageLoader mInstance;
@@ -31,6 +29,8 @@ public class ImageLoader {
     private LruCache<String, Bitmap> mLruCache;
 
     private Semaphore mSemaphorePoolThreadHandler = new Semaphore(0);
+
+    private Semaphore mSemaphoreThreadPool;
 
 
     public static ImageLoader getInstance() {
@@ -58,8 +58,16 @@ public class ImageLoader {
                     @Override
                     public void handleMessage(Message msg) {
                         //线程池取出任务去执行
-
                         mThreadPool.execute(getTask());
+
+                        try {
+                            mSemaphoreThreadPool.acquire();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+
+
 
                     }
                 };
@@ -83,10 +91,10 @@ public class ImageLoader {
 
         /**线程池***/
         mThreadPool = Executors.newFixedThreadPool(threadCount);
-
         mTaskQueue = new LinkedList<>();
         mType = Type.LIFO;
 
+        mSemaphoreThreadPool = new Semaphore(threadCount);
     }
 
     /**
@@ -107,7 +115,7 @@ public class ImageLoader {
     /**
      * 线程池的数量
      **/
-    private final int DEAFULT_THREAD_COUNT = 1;
+    private static int DEAFULT_THREAD_COUNT = 1;
 
     private Type mType = Type.LIFO;
 
@@ -165,9 +173,10 @@ public class ImageLoader {
                     ImageSize imageSize = getInageViewSize(imageView);
                     //2.压缩图片
                     Bitmap bitmap = decodeSampledBitmapFromPath(path, imageSize.width, imageSize.height);
-    //3.加入到缓存
+                    //3.加入到缓存
                     addBitmapToLruCache(path, bitmap);
                     sendImageViewToUI(path, imageView, bitmap);
+                    mSemaphoreThreadPool.release();
 
                 }
             });
@@ -176,9 +185,10 @@ public class ImageLoader {
 
     /**
      * 发送到UI线程，更新图片
-     * @param path 图片路径
+     *
+     * @param path      图片路径
      * @param imageView 显示控件
-     * @param bm bitmap
+     * @param bm        bitmap
      */
     private void sendImageViewToUI(String path, ImageView imageView, Bitmap bm) {
         Message message = Message.obtain();
@@ -191,8 +201,8 @@ public class ImageLoader {
     }
 
     private void addBitmapToLruCache(String path, Bitmap bitmap) {
-        if (getBitmapFromLruCache(path) != null){
-            if (bitmap != null){
+        if (getBitmapFromLruCache(path) != null) {
+            if (bitmap != null) {
                 mLruCache.put(path, bitmap);
             }
         }
@@ -201,10 +211,10 @@ public class ImageLoader {
     /**
      * 压缩图片
      *
-     * @param path
-     * @param width
-     * @param height
-     * @return
+     * @param path   图片路径
+     * @param width  图片宽
+     * @param height 图片高
+     * @return 返回Bitmap对象
      */
     private Bitmap decodeSampledBitmapFromPath(String path, int width, int height) {
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -219,8 +229,8 @@ public class ImageLoader {
     }
 
     /***
-     * @param options 采样
-     * @param reqWidth 宽
+     * @param options   采样
+     * @param reqWidth  宽
      * @param reqHeight 高
      * @return
      */
@@ -241,8 +251,8 @@ public class ImageLoader {
     /**
      * 根据ImageVew获得适当的宽高
      *
-     * @param imageView
-     * @return
+     * @param imageView 采样对象
+     * @return 返回宽高对象
      */
     @SuppressLint("NewApi")
     private ImageSize getInageViewSize(ImageView imageView) {
@@ -275,6 +285,16 @@ public class ImageLoader {
         if (height <= 0) {
             height = displayMetrics.heightPixels;
         }
+
+
+        /*int value = 0;
+        Field field = ImageView.class.getDeclaredField(fieldName);
+
+        int
+
+        if ()*/
+
+
 
         imageSize.height = height;
         imageSize.width = width;
