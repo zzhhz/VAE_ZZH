@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import android.widget.Toast;
  * 给控件设置监听事件
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+    protected static String TAG;
     protected Context mContext;
     protected BaseHandler mHandler;
     protected Toast mToast;
@@ -27,6 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TAG = this.getLocalClassName();
         mContext = this;
         mHandler = new BaseHandler();
     }
@@ -49,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     /**
      * 在子Activity中处理handler
      *
-     * @param msg
+     * @param msg 发送过来的msg
      */
     protected abstract void handlerMessage(Message msg);
 
@@ -63,7 +67,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     /**
      * 显示的文字提示信息
      *
-     * @param str
+     * @param str 显示文字
      */
     protected void showMessage(String str) {
         if (mToast == null) {
@@ -73,5 +77,17 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             mToast.setText(str);
         }
         mToast.show();
+    }
+
+    /***
+     * 记录日志
+     * @param msg 日志信息
+     */
+    protected void loge(String msg){
+        if (TextUtils.isEmpty(msg)) {
+            Log.e(TAG, "------null---");
+        } else {
+            Log.e(TAG, "------"+msg+"---");
+        }
     }
 }

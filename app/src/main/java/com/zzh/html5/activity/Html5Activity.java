@@ -87,7 +87,8 @@ public class Html5Activity extends BaseActivity {
          *
          * */
         webView.loadUrl("file:///android_asset/publish_good_info.html");
-
+        Log.e(TAG, "-----测试封装-----");
+        loge("-----测试封装2-----");
     }
 
     @Override

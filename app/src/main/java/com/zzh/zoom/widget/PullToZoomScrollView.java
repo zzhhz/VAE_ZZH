@@ -131,7 +131,7 @@ public class PullToZoomScrollView extends PullToZoomBase<ScrollView> {
 
     @Override
     protected boolean isReadyForPullStart() {
-        return false;
+        return mRootView.getScrollY() == 0;
     }
 
     @Override

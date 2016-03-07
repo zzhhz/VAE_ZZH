@@ -40,7 +40,8 @@
         <activity android:name="com.zzh.player.MediaPlayerActivity" />
         <activity android:name="com.zzh.image.SelectImgActivity" />
         <activity android:name="com.zzh.qrc.QRCActivity" />
-        <activity android:name="com.zzh.zoom.RecyclerActivity"></activity>
+        <activity android:name="com.zzh.zoom.RecyclerActivity" />
+        <activity android:name="com.zzh.zoom.PullToZoomScrollViewActivity"></activity>
     </application>
 
 </manifest>
