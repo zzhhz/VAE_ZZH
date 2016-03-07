@@ -128,7 +128,6 @@ public class ImageLoader {
      **/
     private Handler mUIHandler;
 
-
     /**
      * 设置图片
      *
