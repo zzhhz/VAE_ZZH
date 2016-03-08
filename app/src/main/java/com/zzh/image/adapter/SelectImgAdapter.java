@@ -1,12 +1,14 @@
 package com.zzh.image.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.zzh.image.ShowSystemPictureActivity;
 import com.zzh.image.bean.Picture;
 import com.zzh.image.holder.ImgViewHolder;
 import com.zzh.image.loader.ImageLoader;
@@ -15,6 +17,7 @@ import com.zzh.vae.R;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by zzh on 2016/2/24.
@@ -49,8 +52,15 @@ public class SelectImgAdapter extends RecyclerView.Adapter<ImgViewHolder>{
     public void onBindViewHolder(ImgViewHolder holder, int position) {
         if ((position+1) == getItemCount()){
             holder.imageView.setImageResource(R.mipmap.icon_add);
+            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, ShowSystemPictureActivity.class);
+                    mContext.startActivity(intent);
+                }
+            });
         } else {
-
+            Picture picture = dataList.get(position);
         }
     }
 

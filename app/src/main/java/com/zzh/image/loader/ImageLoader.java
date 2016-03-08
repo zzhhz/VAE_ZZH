@@ -115,7 +115,7 @@ public class ImageLoader {
     /**
      * 线程池的数量
      **/
-    private static int DEAFULT_THREAD_COUNT = 1;
+    private static int DEAFULT_THREAD_COUNT = 3;
 
     private Type mType = Type.LIFO;
 

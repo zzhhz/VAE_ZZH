@@ -4,9 +4,21 @@
 
     <ImageView
         android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
         android:id="@+id/imageView"
         android:padding="5dp"
         android:src="@mipmap/icon_add"/>
+    <ImageButton
+        android:id="@+id/item_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:src="@mipmap/icon_unselect"/>
+
 </RelativeLayout>
