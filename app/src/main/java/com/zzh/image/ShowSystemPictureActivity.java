@@ -112,16 +112,7 @@ public class ShowSystemPictureActivity extends BaseActivity {
                     }
 
                     mImgs.clear();
-                    int picSize = parentFile.list(new FilenameFilter() {
-                        @Override
-                        public boolean accept(File dir, String filename) {
-                            if (filename.endsWith(".jpeg") || filename.endsWith(".png") || filename.endsWith(".jpg")) {
-                                mImgs.add(filename);
-                                return true;
-                            }
-                            return false;
-                        }
-                    }).length;
+                    int picSize = parentFile.list(filter).length;
 
 
                     picture.setCount(picSize);
@@ -149,6 +140,8 @@ public class ShowSystemPictureActivity extends BaseActivity {
     @Override
     protected void initSetListener() {
         relativeLayout.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -159,12 +152,30 @@ public class ShowSystemPictureActivity extends BaseActivity {
     }
 
     private void initDirPopWindow() {
-
         mPopupWindow = new ListPopupWindow(mContext, mFolderBeans);
         mPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
                 lightOn();
+            }
+        });
+
+        mPopupWindow.setOnDirListener(new ListPopupWindow.OnDirSelectedListener() {
+            @Override
+            public void onSelected(Picture picture) {
+                mCurrentDir = new File(picture.getDir());
+                loge(picture.getDir());
+                mImgs  = Arrays.asList(mCurrentDir.list(new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String filename) {
+                        if (filename.endsWith(".jpeg") || filename.endsWith(".png") || filename.endsWith(".jpg")) {
+                            return true;
+                        }
+                        return false;
+                    }
+                }));
+                adapter = new ShowImageAdapter(mContext, mImgs, mCurrentDir.getAbsolutePath());
+                gridView.setAdapter(adapter);
             }
         });
     }
@@ -183,7 +194,7 @@ public class ShowSystemPictureActivity extends BaseActivity {
             showMessage("未扫描到图片");
             return;
         }
-        //mImgs = Arrays.asList(mCurrentDir.list());
+        mImgs = Arrays.asList(mCurrentDir.list(filter));
         adapter = new ShowImageAdapter(mContext, mImgs, mCurrentDir.getAbsolutePath());
         gridView.setAdapter(adapter);
         dirCount.setText(String.valueOf(mMaxCount));
@@ -213,4 +224,14 @@ public class ShowSystemPictureActivity extends BaseActivity {
         wl.alpha = 0.3f;
         getWindow().setAttributes(wl);
     }
+
+    FilenameFilter filter = new FilenameFilter() {
+        @Override
+        public boolean accept(File dir, String filename) {
+            if (filename.endsWith(".jpeg") || filename.endsWith(".png") || filename.endsWith(".jpg")) {
+                return true;
+            }
+            return false;
+        }
+    };
 }

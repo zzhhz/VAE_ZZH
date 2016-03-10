@@ -3,11 +3,13 @@ package com.zzh.image.dialog;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -18,7 +20,6 @@ import com.zzh.image.bean.Picture;
 import com.zzh.image.loader.ImageLoader;
 import com.zzh.vae.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +32,12 @@ public class ListPopupWindow extends PopupWindow {
     private View mContentView;
     private ListView mListView;
     private List<Picture> mDatas;
+
+    private OnDirSelectedListener listener;
+
+    public void setOnDirListener(OnDirSelectedListener listener) {
+        this.listener = listener;
+    }
 
     public ListPopupWindow(Context mContext, List<Picture> mDatas) {
         this.mContext = mContext;
@@ -66,7 +73,15 @@ public class ListPopupWindow extends PopupWindow {
     }
 
     private void initEvent() {
-
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (listener != null) {
+                    listener.onSelected(mDatas.get(position));
+                    dismiss();
+                }
+            }
+        });
     }
 
     /**
@@ -125,5 +140,9 @@ public class ListPopupWindow extends PopupWindow {
             }
 
         }
+    }
+
+    public interface OnDirSelectedListener{
+        void onSelected(Picture picture);
     }
 }
