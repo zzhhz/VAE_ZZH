@@ -9,13 +9,17 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.GridView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zzh.image.adapter.ShowImageAdapter;
 import com.zzh.image.bean.Picture;
+import com.zzh.image.dialog.ListPopupWindow;
 import com.zzh.vae.R;
 import com.zzh.vae.base.BaseActivity;
 
@@ -37,6 +41,7 @@ public class ShowSystemPictureActivity extends BaseActivity {
     private List<Picture> mFolderBeans;
     private File mCurrentDir;
     private int mMaxCount;
+    private ListPopupWindow mPopupWindow;
 
     private ProgressDialog dialog;
 
@@ -80,10 +85,9 @@ public class ShowSystemPictureActivity extends BaseActivity {
                 Cursor cursor = cr.query(mImgUri, null, MediaStore.Images.Media.MIME_TYPE + "= ? or  "+ MediaStore.Images.Media.MIME_TYPE + "= ? ",
                         new String[]{"image/jpeg", "image/png"}, MediaStore.Images.Media.DATE_MODIFIED);
 
-                Set<String> mDirPaths = new HashSet<String>();
+                Set<String> mDirPaths = new HashSet<>();
 
-                while (cursor.moveToNext())
-                {
+                while (cursor.moveToNext()) {
                     String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
                     File parentFile = new File(path).getParentFile();
                     if (parentFile == null) {
@@ -94,8 +98,7 @@ public class ShowSystemPictureActivity extends BaseActivity {
                     Picture picture = null;
 
 
-                    if (mDirPaths.contains(dirPath))
-                    {
+                    if (mDirPaths.contains(dirPath)) {
                        continue;
                     } else {
                         mDirPaths.add(dirPath);
@@ -104,16 +107,16 @@ public class ShowSystemPictureActivity extends BaseActivity {
                         picture.setFirstImagePath(path);
                     }
 
-                    if (parentFile.list() ==  null)
-                    {
+                    if (parentFile.list() ==  null) {
                         continue;
                     }
 
+                    mImgs.clear();
                     int picSize = parentFile.list(new FilenameFilter() {
                         @Override
                         public boolean accept(File dir, String filename) {
-                            if (filename.endsWith(".jpeg") || filename.endsWith(".png") || filename.endsWith(".jpg"))
-                            {
+                            if (filename.endsWith(".jpeg") || filename.endsWith(".png") || filename.endsWith(".jpg")) {
+                                mImgs.add(filename);
                                 return true;
                             }
                             return false;
@@ -125,8 +128,7 @@ public class ShowSystemPictureActivity extends BaseActivity {
 
                     mFolderBeans.add(picture);
 
-                    if (picSize > mMaxCount)
-                    {
+                    if (picSize > mMaxCount) {
                         mMaxCount = picSize;
                         mCurrentDir = parentFile;
                     }
@@ -146,24 +148,47 @@ public class ShowSystemPictureActivity extends BaseActivity {
 
     @Override
     protected void initSetListener() {
-
+        relativeLayout.setOnClickListener(this);
     }
 
     @Override
     protected void handlerMessage(Message msg) {
         data2View();
+
+        initDirPopWindow();
+    }
+
+    private void initDirPopWindow() {
+
+        mPopupWindow = new ListPopupWindow(mContext, mFolderBeans);
+        mPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                lightOn();
+            }
+        });
+    }
+
+    /**
+     *
+     */
+    private void lightOn() {
+        WindowManager.LayoutParams wm = getWindow().getAttributes();
+        wm.alpha = 1.0f;
+        getWindow().setAttributes(wm);
     }
 
     private void data2View() {
         if (mCurrentDir == null) {
-            showMessage("为扫描到图片");
+            showMessage("未扫描到图片");
             return;
         }
-        mImgs = Arrays.asList(mCurrentDir.list());
+        //mImgs = Arrays.asList(mCurrentDir.list());
         adapter = new ShowImageAdapter(mContext, mImgs, mCurrentDir.getAbsolutePath());
         gridView.setAdapter(adapter);
-        if (dialog != null && dialog.isShowing())
-        {
+        dirCount.setText(String.valueOf(mMaxCount));
+        dirName.setText(mCurrentDir.getName());
+        if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
     }
@@ -171,5 +196,21 @@ public class ShowSystemPictureActivity extends BaseActivity {
     @Override
     public void onClick(View v) {
 
+        switch (v.getId()){
+            case R.id.relativeLayout:
+                showPopWindow();
+                break;
+        }
+    }
+
+    private void showPopWindow() {
+        mPopupWindow.showAsDropDown(relativeLayout, 0,0);
+        lightOff();
+    }
+
+    private void lightOff() {
+        WindowManager.LayoutParams wl = getWindow().getAttributes();
+        wl.alpha = 0.3f;
+        getWindow().setAttributes(wl);
     }
 }

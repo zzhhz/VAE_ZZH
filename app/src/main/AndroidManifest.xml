@@ -35,14 +35,15 @@
         <activity android:name="com.zzh.player.PlayerActivity" />
         <activity android:name="com.zzh.facedetector.FacedetectorActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.zzh.player.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name="com.zzh.player.MediaPlayerActivity" />
         <activity android:name="com.zzh.image.SelectImgActivity" />
         <activity android:name="com.zzh.qrc.QRCActivity" />
         <activity android:name="com.zzh.zoom.RecyclerActivity" />
         <activity android:name="com.zzh.zoom.PullToZoomScrollViewActivity" />
-        <activity android:name="com.zzh.image.ShowSystemPictureActivity"></activity>
+        <activity android:name="com.zzh.image.ShowSystemPictureActivity" />
+        <activity android:name="com.zzh.brokenview.BrokenActivity"/>
     </application>
 
 </manifest>
