@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.zzh.facedetector.PermissionActivity;
 import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.player.PlayerActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button6).setOnClickListener(this);
         findViewById(R.id.button7).setOnClickListener(this);
         findViewById(R.id.button8).setOnClickListener(this);
+        findViewById(R.id.button9).setOnClickListener(this);
     }
 
     @Override
@@ -115,6 +117,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button8: //测试选择图片
                 Intent intent8 = new Intent(mContext, SelectImgActivity.class);
                 startActivity(intent8);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button9:
+                Intent intent9 = new Intent(mContext, PermissionActivity.class);
+                startActivity(intent9);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 

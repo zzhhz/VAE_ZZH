@@ -43,7 +43,8 @@
         <activity android:name="com.zzh.zoom.RecyclerActivity" />
         <activity android:name="com.zzh.zoom.PullToZoomScrollViewActivity" />
         <activity android:name="com.zzh.image.ShowSystemPictureActivity" />
-        <activity android:name="com.zzh.brokenview.BrokenActivity"/>
+        <activity android:name="com.zzh.brokenview.BrokenActivity" />
+        <activity android:name="com.zzh.facedetector.PermissionActivity"></activity>
     </application>
 
 </manifest>
