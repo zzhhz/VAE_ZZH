@@ -1,6 +1,9 @@
 package com.zzh.vae.base;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -26,13 +29,23 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected Context mContext;
     protected BaseHandler mHandler;
     protected Toast mToast;
+    protected BaseReceiver mReceiver;
+    protected IntentFilter mFilter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getLocalClassName();
         mContext = this;
-        mHandler = new BaseHandler();
+        if (mHandler == null)
+            mHandler = new BaseHandler();
+    }
+
+    protected void init(){
+        initView();
+        initData();
+        initSetListener();
     }
 
     /**
@@ -57,10 +70,29 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      */
     protected abstract void handlerMessage(Message msg);
 
+    /**
+     * 处理广播
+     * @param context 上下文
+     * @param intent 数据
+     */
+    protected void onBroadCastReceiver(Context context, Intent intent) {
+    }
+
     public class BaseHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
             handlerMessage(msg);
+        }
+    }
+
+    /**
+     * 广播
+     */
+    private class BaseReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            onBroadCastReceiver(context, intent);
         }
     }
 

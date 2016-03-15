@@ -12,6 +12,7 @@ import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
+import com.zzh.qrc.ScanQRActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
@@ -25,9 +26,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-        initData();
-        initSetListener();
+        init();
     }
 
     @Override
@@ -56,6 +55,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button7).setOnClickListener(this);
         findViewById(R.id.button8).setOnClickListener(this);
         findViewById(R.id.button9).setOnClickListener(this);
+        findViewById(R.id.button10).setOnClickListener(this);
     }
 
     @Override
@@ -122,6 +122,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button9:
                 Intent intent9 = new Intent(mContext, PermissionActivity.class);
                 startActivity(intent9);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button10:
+                Intent intent10 = new Intent(mContext, ScanQRActivity.class);
+                startActivity(intent10);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 
