@@ -1,7 +1,6 @@
 package com.zzh.qrc;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -81,7 +80,7 @@ public class ScanQRActivity extends BaseActivity {
                     //显示扫描到的内容
                     mTextView.setText(bundle.getString("result"));
                     //显示
-                    mImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
+                    //mImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
                 }
                 break;
         }

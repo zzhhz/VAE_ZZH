@@ -40,6 +40,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         mContext = this;
         if (mHandler == null)
             mHandler = new BaseHandler();
+        if (mReceiver == null)
+            mReceiver = new BaseReceiver();
+        if (mFilter == null)
+            mFilter = new IntentFilter();
+        initBroadCast();
+    }
+
+    private void initBroadCast() {
+        //mFilter.addAction();
     }
 
     protected void init(){
