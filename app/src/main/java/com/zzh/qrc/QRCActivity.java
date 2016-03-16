@@ -46,7 +46,7 @@ public class QRCActivity extends BaseActivity {
     private static final int QR_WIDTH = 500;
     private static final int QR_HEIGHT = 500;
     private static String MSG = "http://zzhhz.blog.51cto.com/";
-    private static String MSGINFO = "赵中恒：QQ:1299234582, Email: zzh_hz@126.com";
+    private static String MSGINFO = "http://zzhhz.blog.51cto.com/";
     private TextView textView_msg;
     private ImageView imageView_qrc;
 

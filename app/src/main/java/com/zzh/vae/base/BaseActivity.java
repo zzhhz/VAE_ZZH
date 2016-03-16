@@ -45,6 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (mFilter == null)
             mFilter = new IntentFilter();
         initBroadCast();
+        mContext.registerReceiver(mReceiver, mFilter);
     }
 
     private void initBroadCast() {
@@ -130,5 +131,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         } else {
             Log.e(TAG, "------"+msg+"---");
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mReceiver != null)
+            mContext.unregisterReceiver(mReceiver);
     }
 }

@@ -1,5 +1,7 @@
 package com.zzh.vae.utils;
 
+import android.os.AsyncTask;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
