@@ -2,6 +2,7 @@ package com.zzh.player;
 
 import android.os.Message;
 import android.os.Bundle;
+import android.view.SurfaceView;
 import android.view.View;
 
 import com.zzh.vae.R;
@@ -13,14 +14,11 @@ public class MediaPlayerActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_player);
-        initView();
-        initData();
-        initSetListener();
+        init();
     }
 
     @Override
     protected void initView() {
-
     }
 
     @Override
