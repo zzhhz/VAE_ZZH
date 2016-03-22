@@ -35,8 +35,8 @@ public class ZZHttpUtils {
             conn.setDoOutput(true); //允许输出流，即允许上传
             conn.setUseCaches(false);
             /////设置头文件
-            conn.setRequestProperty("Content-type","application/x-java-serialized-object");
-            conn.setRequestProperty("device","Android");
+//            conn.setRequestProperty("Content-type","application/x-java-serialized-object");
+//            conn.setRequestProperty("device","Android");
             conn.setRequestMethod("GET");
             conn.connect();
             int code = conn.getResponseCode();

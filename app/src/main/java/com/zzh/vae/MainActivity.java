@@ -11,6 +11,7 @@ import com.zzh.facedetector.PermissionActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.SelectImgActivity;
+import com.zzh.image.StagActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
 import com.zzh.qrc.ScanQRActivity;
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button9).setOnClickListener(this);
         findViewById(R.id.button10).setOnClickListener(this);
         findViewById(R.id.button11).setOnClickListener(this);
+        findViewById(R.id.button12).setOnClickListener(this);
     }
 
     @Override
@@ -134,6 +136,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button11:
                 Intent intent11 = new Intent(mContext, HttpActivity.class);
                 startActivity(intent11);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button12:
+                Intent intent12 = new Intent(mContext, StagActivity.class);
+                startActivity(intent12);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 

@@ -2,6 +2,7 @@ package com.zzh.image.holder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.zzh.vae.R;
@@ -11,8 +12,10 @@ import com.zzh.vae.R;
  */
 public class ImgViewHolder extends RecyclerView.ViewHolder{
     public ImageView imageView;
+    public ImageButton item_select;
     public ImgViewHolder(View itemView) {
         super(itemView);
         imageView = (ImageView) itemView.findViewById(R.id.imageView);
+        item_select = (ImageButton) itemView.findViewById(R.id.item_select);
     }
 }

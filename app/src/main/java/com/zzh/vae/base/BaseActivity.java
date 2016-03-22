@@ -126,11 +126,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      * @param msg 日志信息
      */
     protected void loge(String msg){
-        if (TextUtils.isEmpty(msg)) {
-            Log.e(TAG, "------null---");
-        } else {
             Log.e(TAG, "------"+msg+"---");
-        }
     }
 
     @Override
