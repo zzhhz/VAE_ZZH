@@ -4,11 +4,15 @@ import android.os.Message;
 import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import com.zzh.vae.R;
+import com.zzh.vae.ZZHConstants;
 import com.zzh.vae.base.BaseActivity;
 
 public class MediaPlayerActivity extends BaseActivity {
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +23,14 @@ public class MediaPlayerActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        videoView = (VideoView)findViewById(R.id.videoView_net);
     }
 
     @Override
     protected void initData() {
-
+        videoView.setVideoPath(ZZHConstants.URL_MEDIA_PLAYER);
+        videoView.setMediaController(new MediaController(this));
+        videoView.requestFocus();
     }
 
     @Override

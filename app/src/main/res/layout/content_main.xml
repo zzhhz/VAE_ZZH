@@ -109,4 +109,10 @@
         android:text="测试瀑布流"
         android:id="@+id/button12"
         android:layout_below="@+id/button11" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放网络视频"
+        android:id="@+id/button13"
+        android:layout_below="@+id/button12" />
 </RelativeLayout>

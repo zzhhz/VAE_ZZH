@@ -12,6 +12,7 @@ import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.image.StagActivity;
+import com.zzh.player.MediaPlayerActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
 import com.zzh.qrc.ScanQRActivity;
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button10).setOnClickListener(this);
         findViewById(R.id.button11).setOnClickListener(this);
         findViewById(R.id.button12).setOnClickListener(this);
+        findViewById(R.id.button13).setOnClickListener(this);
     }
 
     @Override
@@ -143,7 +145,11 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent12);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
-
+            case R.id.button13:
+                Intent intent13 = new Intent(mContext, MediaPlayerActivity.class);
+                startActivity(intent13);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
         }
     }
 }
