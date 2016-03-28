@@ -18,5 +18,6 @@ public class ZZHConstants {
 
     public static final String WEATHER_XML="http://flash.weather.com.cn/wmaps/xml/china.xml";
     public static final String URL_MEDIA_PLAYER = "http://www.51zsyl.com/resources/video/3.mp4";
+    public static final String URL_TEST_JSON="http://www.hopemedic.com/hyconsumer/consumer/consumerApp.html?type=hospitalsAndDepartments";
 
 }
