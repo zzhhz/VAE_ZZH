@@ -59,7 +59,8 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.zzh.html5.HttpActivity" />
-        <activity android:name="com.zzh.image.StagActivity"></activity>
+        <activity android:name="com.zzh.image.StagActivity" />
+        <activity android:name="com.zzh.retrofit.RetrofitActivity"></activity>
     </application>
 
 </manifest>
