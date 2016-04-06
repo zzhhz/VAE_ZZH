@@ -16,6 +16,7 @@ import com.zzh.player.MediaPlayerActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
 import com.zzh.qrc.ScanQRActivity;
+import com.zzh.retrofit.RetrofitActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button11).setOnClickListener(this);
         findViewById(R.id.button12).setOnClickListener(this);
         findViewById(R.id.button13).setOnClickListener(this);
+        findViewById(R.id.button15).setOnClickListener(this);
     }
 
     @Override
@@ -149,6 +151,19 @@ public class MainActivity extends BaseActivity {
                 Intent intent13 = new Intent(mContext, MediaPlayerActivity.class);
                 startActivity(intent13);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            /*case R.id.button14:
+                Intent intent14 = new Intent(mContext, RetrofitActivity.class);
+                startActivity(intent14);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;*/
+            case R.id.button15:
+                Intent intent15 = new Intent(mContext, RetrofitActivity.class);
+                startActivity(intent15);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            default:
+                showMessage("没有做任何处理");
                 break;
         }
     }
