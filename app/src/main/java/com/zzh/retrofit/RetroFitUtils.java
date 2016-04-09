@@ -6,6 +6,7 @@ import retrofit2.Retrofit;
 
 /**
  * Created by zzh on 2016/4/6.
+ * 封装retrofit
  */
 public class RetroFitUtils {
     public static Retrofit getRetrofit(){
