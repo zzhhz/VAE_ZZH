@@ -127,4 +127,10 @@
         android:text="Retrofit"
         android:id="@+id/button15"
         android:layout_below="@+id/button14" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button15"
+        android:id="@+id/button16"
+        android:text="测试高斯模糊"/>
 </RelativeLayout>

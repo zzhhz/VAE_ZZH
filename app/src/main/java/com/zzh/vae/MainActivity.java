@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.zzh.blur.BlurActivity;
 import com.zzh.facedetector.PermissionActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
@@ -64,6 +65,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button12).setOnClickListener(this);
         findViewById(R.id.button13).setOnClickListener(this);
         findViewById(R.id.button15).setOnClickListener(this);
+        findViewById(R.id.button16).setOnClickListener(this);
     }
 
     @Override
@@ -160,6 +162,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button15:
                 Intent intent15 = new Intent(mContext, RetrofitActivity.class);
                 startActivity(intent15);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button16:
+                Intent intent16 = new Intent(mContext, BlurActivity.class);
+                startActivity(intent16);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
             default:

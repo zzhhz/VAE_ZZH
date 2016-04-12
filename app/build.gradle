@@ -34,4 +34,5 @@ dependencies {
     compile 'com.squareup.okio:okio:1.6.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.1'
     compile 'com.alibaba:fastjson:1.2.8'
+    compile files('lib/renderscript-v8.jar')
 }
