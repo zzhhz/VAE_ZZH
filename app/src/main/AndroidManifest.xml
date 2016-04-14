@@ -61,7 +61,8 @@
         <activity android:name="com.zzh.html5.HttpActivity" />
         <activity android:name="com.zzh.image.StagActivity" />
         <activity android:name="com.zzh.retrofit.RetrofitActivity" />
-        <activity android:name="com.zzh.blur.BlurActivity"></activity>
+        <activity android:name="com.zzh.blur.BlurActivity" />
+        <activity android:name="com.zzh.dialog.DialogsActivity"></activity>
     </application>
 
 </manifest>

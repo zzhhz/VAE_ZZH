@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zzh.blur.BlurActivity;
+import com.zzh.dialog.DialogsActivity;
+import com.zzh.facedetector.FacedetectorActivity;
 import com.zzh.facedetector.PermissionActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
@@ -23,7 +25,6 @@ import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
 import com.zzh.zoom.PullToZoomScrollViewActivity;
 import com.zzh.zoom.RecyclerActivity;
-import com.zzh.zoom.widget.PullToZoomScrollView;
 
 public class MainActivity extends BaseActivity {
 
@@ -66,6 +67,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button13).setOnClickListener(this);
         findViewById(R.id.button15).setOnClickListener(this);
         findViewById(R.id.button16).setOnClickListener(this);
+        findViewById(R.id.button17).setOnClickListener(this);
+        findViewById(R.id.button18).setOnClickListener(this);
     }
 
     @Override
@@ -168,6 +171,17 @@ public class MainActivity extends BaseActivity {
                 Intent intent16 = new Intent(mContext, BlurActivity.class);
                 startActivity(intent16);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button17:
+                Intent intent17 = new Intent(mContext, FacedetectorActivity.class);
+                startActivity(intent17);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button18:
+                Intent intent18 = new Intent(mContext, DialogsActivity.class);
+                startActivity(intent18);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
                 break;
             default:
                 showMessage("没有做任何处理");

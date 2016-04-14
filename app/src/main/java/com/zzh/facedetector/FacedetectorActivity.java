@@ -11,11 +11,9 @@ import com.zzh.vae.R;
 import com.zzh.vae.base.BaseActivity;
 
 /**
- *
+ * 轮子选择器
  */
 public class FacedetectorActivity extends BaseActivity {
-    private String codeStr = "赵中恒";
-    private ImageView imageCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +22,6 @@ public class FacedetectorActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        imageCode = (ImageView) findViewById(R.id.imageCode);
-
-        Bitmap bitmap = createBitmap(codeStr);
-
-
-    }
-
-    private Bitmap createBitmap(String codeStr) {
-        return null;
     }
 
     @Override

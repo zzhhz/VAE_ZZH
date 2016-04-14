@@ -133,4 +133,16 @@
         android:layout_below="@+id/button15"
         android:id="@+id/button16"
         android:text="测试高斯模糊"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button16"
+        android:id="@+id/button17"
+        android:text="测试高斯模糊"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button17"
+        android:id="@+id/button18"
+        android:text="弹出框"/>
 </RelativeLayout>
