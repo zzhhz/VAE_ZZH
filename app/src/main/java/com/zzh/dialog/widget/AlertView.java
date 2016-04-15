@@ -122,7 +122,7 @@ public class AlertView {
 
     }
 
-    private void init() {
+    protected void init() {
         inAnim = getInAnimation();
         outAnim = getOutAnimation();
     }
@@ -172,7 +172,7 @@ public class AlertView {
                 margin_alert_left_right = mContext.getResources().getDimensionPixelSize(R.dimen.margin_alert_left_right);
                 params.setMargins(margin_alert_left_right, 0, margin_alert_left_right, 0);
                 contentContainer.setLayoutParams(params);
-                gravity = Gravity.BOTTOM;
+                gravity = Gravity.CENTER;
 
                 initAlertView(layoutInflater);
 
@@ -199,6 +199,7 @@ public class AlertView {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams((int)mContext.getResources().getDimension(R.dimen.size_divier), LinearLayout.LayoutParams.MATCH_PARENT);
                     loAlertButtons.addView(divier,params);
                 }
+
                 View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_alertbutton, null);
                 TextView tvAlert = (TextView) itemView.findViewById(R.id.tvAlert);
                 tvAlert.setClickable(true);
@@ -400,7 +401,8 @@ public class AlertView {
 
     private void onAttach(ViewGroup rootView) {
         decorGroup.addView(rootView);
-        contentContainer.startAnimation(inAnim);
+        Animation animation = inAnim;
+        //contentContainer.startAnimation(inAnim);
     }
 
     public boolean isShowing() {
