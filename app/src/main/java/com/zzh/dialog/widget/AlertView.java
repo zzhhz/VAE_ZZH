@@ -94,8 +94,8 @@ public class AlertView {
         init();
     }
 
-    private List<String> array2List(String[] array){
-        if (array == null){
+    private List<String> array2List(String[] array) {
+        if (array == null) {
             return null;
         }
         ArrayList<String> tmp = new ArrayList<>();
@@ -186,18 +186,18 @@ public class AlertView {
 
         int position = 0;
         //如果总数据小于等于HORIZONTAL_BUTTONS_MAXCOUNT，则是横向button
-        if(mDatas.size()<=HORIZONTAL_BUTTON_MAX_COUNT){
+        if (mDatas.size() <= HORIZONTAL_BUTTON_MAX_COUNT) {
             ViewStub viewStub = (ViewStub) contentContainer.findViewById(R.id.viewStubHorizontal);
             viewStub.inflate();
             LinearLayout loAlertButtons = (LinearLayout) contentContainer.findViewById(R.id.loAlertButtons);
-            for (int i = 0; i < mDatas.size(); i ++) {
+            for (int i = 0; i < mDatas.size(); i++) {
                 //如果不是第一个按钮
-                if (i != 0){
+                if (i != 0) {
                     //添加上按钮之间的分割线
                     View divier = new View(mContext);
                     divier.setBackgroundColor(mContext.getResources().getColor(R.color.bgColor_divier));
-                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams((int)mContext.getResources().getDimension(R.dimen.size_divier), LinearLayout.LayoutParams.MATCH_PARENT);
-                    loAlertButtons.addView(divier,params);
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams((int) mContext.getResources().getDimension(R.dimen.size_divier), LinearLayout.LayoutParams.MATCH_PARENT);
+                    loAlertButtons.addView(divier, params);
                 }
 
                 View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_alertbutton, null);
@@ -205,37 +205,34 @@ public class AlertView {
                 tvAlert.setClickable(true);
 
                 //设置点击效果
-                if(mDatas.size() == 1){
+                if (mDatas.size() == 1) {
                     tvAlert.setBackgroundResource(R.drawable.bg_alertbutton_bottom);
-                }
-                else if(i == 0){//设置最左边的按钮效果
+                } else if (i == 0) {//设置最左边的按钮效果
                     tvAlert.setBackgroundResource(R.drawable.bg_alertbutton_left);
-                }
-                else if(i == mDatas.size() - 1){//设置最右边的按钮效果
+                } else if (i == mDatas.size() - 1) {//设置最右边的按钮效果
                     tvAlert.setBackgroundResource(R.drawable.bg_alertbutton_right);
                 }
                 String data = mDatas.get(i);
                 tvAlert.setText(data);
 
                 //取消按钮的样式
-                if (data == cancel){
+                if (data == cancel) {
                     tvAlert.setTypeface(Typeface.DEFAULT_BOLD);
                     tvAlert.setTextColor(mContext.getResources().getColor(R.color.textColor_alert_button_cancel));
                     tvAlert.setOnClickListener(new OnTextClickListener(CANCELPOSITION));
                     position = position - 1;
                 }
                 //高亮按钮的样式
-                else if (mDestructive!= null && mDestructive.contains(data)){
+                else if (mDestructive != null && mDestructive.contains(data)) {
                     tvAlert.setTextColor(mContext.getResources().getColor(R.color.textColor_alert_button_destructive));
                 }
 
                 tvAlert.setOnClickListener(new OnTextClickListener(position));
                 position++;
-                loAlertButtons.addView(itemView,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                loAlertButtons.addView(itemView, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT, 1));
             }
-        }
-        else{
+        } else {
             ViewStub viewStub = (ViewStub) contentContainer.findViewById(R.id.viewStubVertical);
             viewStub.inflate();
             initListView();
