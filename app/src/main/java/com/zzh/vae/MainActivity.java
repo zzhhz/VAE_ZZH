@@ -13,12 +13,15 @@ import com.zzh.facedetector.FacedetectorActivity;
 import com.zzh.facedetector.PermissionActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
+import com.zzh.image.CircleActivity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.image.StagActivity;
 import com.zzh.player.MediaPlayerActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
 import com.zzh.qrc.ScanQRActivity;
+import com.zzh.recycler.AnimRecyclerActivity;
+import com.zzh.retrofit.OkHttpActivity;
 import com.zzh.retrofit.RetrofitActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
@@ -69,6 +72,9 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button16).setOnClickListener(this);
         findViewById(R.id.button17).setOnClickListener(this);
         findViewById(R.id.button18).setOnClickListener(this);
+        findViewById(R.id.button19).setOnClickListener(this);
+        findViewById(R.id.button20).setOnClickListener(this);
+        findViewById(R.id.button21).setOnClickListener(this);
     }
 
     @Override
@@ -183,6 +189,23 @@ public class MainActivity extends BaseActivity {
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
                 break;
+            case R.id.button19:
+                Intent intent19 = new Intent(mContext, OkHttpActivity.class);
+                startActivity(intent19);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+
+            case R.id.button20:
+                Intent intent20 = new Intent(mContext, CircleActivity.class);
+                startActivity(intent20);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button21:
+                Intent intent21 = new Intent(mContext, AnimRecyclerActivity.class);
+                startActivity(intent21);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+
             default:
                 showMessage("没有做任何处理");
                 break;

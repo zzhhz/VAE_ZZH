@@ -12,4 +12,28 @@
         <attr name="zoomView" format="reference" />
         <attr name="isHeaderParallax" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <!--
+        border_thickness:设置边框的宽度
+        border_outside_color:设置外边框颜色
+        border_inside_color:设置内边框颜色
+        -->
+
+        <attr name="border_thickness" format="dimension"/>
+        <attr name="border_outside_color" format="color" />
+        <attr name="border_inside_color" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="roundedimageview1">
+        <!--
+        border_thickness:设置边框的宽度
+        border_outside_color:设置外边框颜色
+        border_inside_color:设置内边框颜色
+        -->
+        <attr name="border_thickness1" format="dimension"/>
+        <attr name="border_outside_color1" format="color" />
+        <attr name="border_inside_color1" format="color" />
+    </declare-styleable>
+
 </resources>

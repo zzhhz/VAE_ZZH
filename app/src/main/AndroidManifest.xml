@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zzh.vae">
+          package="com.zzh.vae">
 
     <!-- 读写SD卡 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 网络访问的权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
 
     <application
         android:allowBackup="true"
@@ -29,40 +29,46 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SurfaceActivity" />
+        <activity android:name=".activity.SurfaceActivity"/>
         <activity
             android:name=".activity.SlidingActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name="com.zzh.html5.activity.Html5Activity" />
-        <activity android:name="com.zzh.player.PlayerActivity" />
-        <activity android:name="com.zzh.facedetector.FacedetectorActivity" />
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.zzh.html5.activity.Html5Activity"/>
+        <activity android:name="com.zzh.player.PlayerActivity"/>
+        <activity android:name="com.zzh.facedetector.FacedetectorActivity"/>
         <activity
             android:name="com.zzh.player.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name="com.zzh.player.MediaPlayerActivity" />
-        <activity android:name="com.zzh.image.SelectImgActivity" />
-        <activity android:name="com.zzh.qrc.QRCActivity" />
-        <activity android:name="com.zzh.zoom.RecyclerActivity" />
-        <activity android:name="com.zzh.zoom.PullToZoomScrollViewActivity" />
-        <activity android:name="com.zzh.image.ShowSystemPictureActivity" />
-        <activity android:name="com.zzh.brokenview.BrokenActivity" />
-        <activity android:name="com.zzh.facedetector.PermissionActivity" />
-        <activity android:name="com.zzh.qrc.ScanQRActivity" />
+            android:label="@string/title_activity_login"/>
+        <activity android:name="com.zzh.player.MediaPlayerActivity"/>
+        <activity android:name="com.zzh.image.SelectImgActivity"/>
+        <activity android:name="com.zzh.qrc.QRCActivity"/>
+        <activity android:name="com.zzh.zoom.RecyclerActivity"/>
+        <activity android:name="com.zzh.zoom.PullToZoomScrollViewActivity"/>
+        <activity android:name="com.zzh.image.ShowSystemPictureActivity"/>
+        <activity android:name="com.zzh.brokenview.BrokenActivity"/>
+        <activity android:name="com.zzh.facedetector.PermissionActivity"/>
+        <activity android:name="com.zzh.qrc.ScanQRActivity"/>
         <activity
             android:name="com.zzh.qrc.MipcaActivityCapture"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name="com.zzh.html5.HttpActivity" />
-        <activity android:name="com.zzh.image.StagActivity" />
-        <activity android:name="com.zzh.retrofit.RetrofitActivity" />
-        <activity android:name="com.zzh.blur.BlurActivity" />
-        <activity android:name="com.zzh.dialog.DialogsActivity"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.zzh.html5.HttpActivity"/>
+        <activity android:name="com.zzh.image.StagActivity"/>
+        <activity android:name="com.zzh.retrofit.RetrofitActivity"/>
+        <activity android:name="com.zzh.blur.BlurActivity"/>
+        <activity android:name="com.zzh.dialog.DialogsActivity"/>
+        <activity android:name="com.zzh.retrofit.OkHttpActivity">
+        </activity>
+        <activity android:name="com.zzh.image.CircleActivity">
+        </activity>
+        <activity android:name="com.zzh.recycler.AnimRecyclerActivity">
+        </activity>
     </application>
 
 </manifest>

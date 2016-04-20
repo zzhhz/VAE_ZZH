@@ -398,7 +398,6 @@ public class AlertView {
 
     private void onAttach(ViewGroup rootView) {
         decorGroup.addView(rootView);
-        Animation animation = inAnim;
         contentContainer.startAnimation(inAnim);
     }
 
