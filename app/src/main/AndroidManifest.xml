@@ -69,6 +69,10 @@
         </activity>
         <activity android:name="com.zzh.recycler.AnimRecyclerActivity">
         </activity>
+        <activity android:name="com.zzh.zoom.tests.MyActivity"/>
+        <activity android:name="com.zzh.zoom.tests.SwipeListViewExampleActivity"/>
+        <activity android:name="com.zzh.zoom.SwipeActivity">
+        </activity>
     </application>
 
 </manifest>

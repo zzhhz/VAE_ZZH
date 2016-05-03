@@ -118,7 +118,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试网络访问（自己封装的）"
+        android:text="登录"
         android:id="@+id/button14"
         android:layout_below="@+id/button13" />
     <Button
@@ -163,4 +163,16 @@
         android:layout_below="@+id/button20"
         android:id="@+id/button21"
         android:text="动画"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button21"
+        android:id="@+id/button22"
+        android:text="recyclerview侧滑菜单"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button22"
+        android:id="@+id/button23"
+        android:text="测试侧滑菜单"/>
 </RelativeLayout>

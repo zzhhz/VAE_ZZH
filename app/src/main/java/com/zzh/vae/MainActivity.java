@@ -16,6 +16,7 @@ import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.CircleActivity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.image.StagActivity;
+import com.zzh.player.LoginActivity;
 import com.zzh.player.MediaPlayerActivity;
 import com.zzh.player.PlayerActivity;
 import com.zzh.qrc.QRCActivity;
@@ -28,6 +29,8 @@ import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
 import com.zzh.zoom.PullToZoomScrollViewActivity;
 import com.zzh.zoom.RecyclerActivity;
+import com.zzh.zoom.SwipeActivity;
+import com.zzh.zoom.tests.SwipeListViewExampleActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -68,6 +71,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button11).setOnClickListener(this);
         findViewById(R.id.button12).setOnClickListener(this);
         findViewById(R.id.button13).setOnClickListener(this);
+        findViewById(R.id.button14).setOnClickListener(this);
         findViewById(R.id.button15).setOnClickListener(this);
         findViewById(R.id.button16).setOnClickListener(this);
         findViewById(R.id.button17).setOnClickListener(this);
@@ -75,6 +79,9 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button19).setOnClickListener(this);
         findViewById(R.id.button20).setOnClickListener(this);
         findViewById(R.id.button21).setOnClickListener(this);
+        findViewById(R.id.button22).setOnClickListener(this);
+        findViewById(R.id.button23
+        ).setOnClickListener(this);
     }
 
     @Override
@@ -163,11 +170,11 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent13);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
-            /*case R.id.button14:
-                Intent intent14 = new Intent(mContext, RetrofitActivity.class);
+            case R.id.button14:
+                Intent intent14 = new Intent(mContext, LoginActivity.class);
                 startActivity(intent14);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                break;*/
+                break;
             case R.id.button15:
                 Intent intent15 = new Intent(mContext, RetrofitActivity.class);
                 startActivity(intent15);
@@ -203,6 +210,16 @@ public class MainActivity extends BaseActivity {
             case R.id.button21:
                 Intent intent21 = new Intent(mContext, AnimRecyclerActivity.class);
                 startActivity(intent21);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button22:
+                Intent intent22 = new Intent(mContext, SwipeListViewExampleActivity.class);
+                startActivity(intent22);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button23:
+                Intent intent5 = new Intent(mContext, SwipeActivity.class);
+                startActivity(intent5);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
 

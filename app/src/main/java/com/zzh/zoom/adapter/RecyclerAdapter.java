@@ -1,6 +1,7 @@
 package com.zzh.zoom.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,12 @@ public class RecyclerAdapter extends RecyclerViewHeaderAdapter<ItemViewHolder> {
 
     @Override
     protected void onBindContentViewHolder(ItemViewHolder holder, int position) {
+        if (position % 2 == 0){
+            holder.textView.setTextColor(Color.BLUE);
+        } else {
+
+            holder.textView.setTextColor(Color.YELLOW);
+        }
         holder.textView.setText(list.get(position));
     }
 
