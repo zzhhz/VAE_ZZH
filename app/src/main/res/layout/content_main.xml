@@ -175,4 +175,48 @@
         android:layout_below="@+id/button22"
         android:id="@+id/button23"
         android:text="测试侧滑菜单"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button23"
+        android:id="@+id/button24"
+        android:text="Surface Activity"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button24"
+        android:id="@+id/button25"
+        android:text="Surface Activity"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络视频播放"
+        android:id="@+id/button26"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/button2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性动画"
+        android:id="@+id/button27"
+        android:layout_above="@+id/button2"
+        android:layout_toEndOf="@+id/button26"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性实现基本的动画"
+        android:id="@+id/button28"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toEndOf="@+id/button2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="布局动画"
+        android:id="@+id/button29"
+        android:layout_alignTop="@+id/button28"
+        android:layout_toEndOf="@+id/button28"/>
 </RelativeLayout>

@@ -1,8 +1,8 @@
 package com.zzh.player;
 
-import android.os.Message;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.SurfaceView;
+import android.os.Message;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -13,6 +13,7 @@ import com.zzh.vae.base.BaseActivity;
 
 public class MediaPlayerActivity extends BaseActivity {
     private VideoView videoView;
+    MediaPlayer mPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

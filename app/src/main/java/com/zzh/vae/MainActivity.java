@@ -7,10 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.zzh.anim.AnimActivity;
+import com.zzh.anim.LayoutAnimActivity;
+import com.zzh.anim.PropertyAnimationActivity;
 import com.zzh.blur.BlurActivity;
 import com.zzh.dialog.DialogsActivity;
 import com.zzh.facedetector.FacedetectorActivity;
 import com.zzh.facedetector.PermissionActivity;
+import com.zzh.foldercell.FolderCellSimpleActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.CircleActivity;
@@ -27,6 +31,7 @@ import com.zzh.retrofit.RetrofitActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
+import com.zzh.video.VideoActivity;
 import com.zzh.zoom.PullToZoomScrollViewActivity;
 import com.zzh.zoom.RecyclerActivity;
 import com.zzh.zoom.SwipeActivity;
@@ -80,8 +85,13 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button20).setOnClickListener(this);
         findViewById(R.id.button21).setOnClickListener(this);
         findViewById(R.id.button22).setOnClickListener(this);
-        findViewById(R.id.button23
-        ).setOnClickListener(this);
+        findViewById(R.id.button23).setOnClickListener(this);
+        findViewById(R.id.button24).setOnClickListener(this);
+        findViewById(R.id.button25).setOnClickListener(this);
+        findViewById(R.id.button26).setOnClickListener(this);
+        findViewById(R.id.button27).setOnClickListener(this);
+        findViewById(R.id.button28).setOnClickListener(this);
+        findViewById(R.id.button29).setOnClickListener(this);
     }
 
     @Override
@@ -105,8 +115,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.button:
                 Intent intent = new Intent(mContext, SlidingActivity.class);
                 startActivity(intent);
@@ -222,7 +231,36 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent5);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
-
+            case R.id.button24:
+                Intent intent24 = new Intent(mContext, SurfaceActivity.class);
+                startActivity(intent24);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button25:
+                Intent intent25 = new Intent(mContext, FolderCellSimpleActivity.class);
+                startActivity(intent25);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button26:
+                Intent intent26 = new Intent(mContext, VideoActivity.class);
+                startActivity(intent26);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button27:
+                Intent intent27 = new Intent(mContext, AnimActivity.class);
+                startActivity(intent27);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button28:
+                Intent intent28 = new Intent(mContext, PropertyAnimationActivity.class);
+                startActivity(intent28);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button29:
+                Intent intent29 = new Intent(mContext, LayoutAnimActivity.class);
+                startActivity(intent29);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
             default:
                 showMessage("没有做任何处理");
                 break;

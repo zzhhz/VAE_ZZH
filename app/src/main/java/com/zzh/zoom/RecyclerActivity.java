@@ -49,6 +49,7 @@ public class RecyclerActivity extends BaseActivity {
         pullToZoomRecyclerView.setHeaderLayoutParams(localObject);
 
 
+
         headerView = pullToZoomRecyclerView.getHeaderView();
         if (headerView != null) {
             ((TextView) headerView.findViewById(R.id.tv_user_name)).setText("小猫喵喵喵喵喵喵喵喵");

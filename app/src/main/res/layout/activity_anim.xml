@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zzh.anim.AnimActivity">
+
+    <ImageView
+        android:id="@+id/animImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ly_1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:id="@+id/startAnim"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左右震动"
+        android:id="@+id/btn_shake"
+        android:layout_alignBottom="@+id/startAnim"
+        android:layout_toEndOf="@+id/startAnim"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="摇晃震动"
+        android:id="@+id/btn_swing"
+        android:layout_alignBottom="@+id/btn_shake"
+        android:layout_toEndOf="@+id/btn_shake"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="落霞"
+        android:id="@+id/drop_down"
+        android:layout_alignBottom="@+id/btn_swing"
+        android:layout_toEndOf="@+id/btn_swing"/>
+</RelativeLayout>

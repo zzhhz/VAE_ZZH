@@ -35,5 +35,20 @@
         <attr name="border_outside_color1" format="color" />
         <attr name="border_inside_color1" format="color" />
     </declare-styleable>
+    <!--FoldingCell中使用到的属性-->
+    <declare-styleable name="FoldingCell">
+        <attr name="backSideColor" format="color" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="additionalFlipsCount" format="integer" />
+    </declare-styleable>
+    <!--视频播放-->
+    <declare-styleable name="UniversalMediaController">
+        <attr name="uvv_scalable" format="boolean" />
+    </declare-styleable>
+    <!--视频播放-->
+    <declare-styleable name="UniversalVideoView">
+        <attr name="uvv_fitXY" format="boolean" />
+        <attr name="uvv_autoRotation" format="boolean" />
+    </declare-styleable>
 
 </resources>

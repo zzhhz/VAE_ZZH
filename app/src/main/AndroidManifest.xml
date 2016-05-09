@@ -73,6 +73,22 @@
         <activity android:name="com.zzh.zoom.tests.SwipeListViewExampleActivity"/>
         <activity android:name="com.zzh.zoom.SwipeActivity">
         </activity>
+        <activity android:name="com.zzh.surface.SurfaceViewActivity">
+        </activity>
+        <activity android:name="com.zzh.foldercell.FolderCellActivity">
+        </activity>
+        <activity android:name="com.zzh.foldercell.FolderCellSimpleActivity">
+        </activity>
+        <activity android:name="com.zzh.video.VideoActivity">
+        </activity>
+        <activity android:name="com.zzh.anim.AnimActivity">
+        </activity>
+        <activity android:name="com.zzh.anim.PropertyAnimationActivity">
+        </activity>
+        <activity android:name="com.zzh.anim.LayoutAnimActivity">
+        </activity>
+        <activity android:name="com.zzh.anim.ShapeActivity">
+        </activity>
     </application>
 
 </manifest>

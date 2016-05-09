@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.zzh.vae"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -34,5 +34,6 @@ dependencies {
     compile 'com.squareup.okio:okio:1.6.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.1'
     compile 'com.alibaba:fastjson:1.2.8'
+    compile 'com.daimajia.easing:library:1.0.1@aar'
     compile files('lib/renderscript-v8.jar')
 }

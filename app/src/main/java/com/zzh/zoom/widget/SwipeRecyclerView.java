@@ -16,6 +16,8 @@ public class SwipeRecyclerView extends RecyclerView {
     private static final int MOVE_RIGHT=10000;
     private static final int MOVE_LEFT=10000;
     private static boolean swipeMenuFlag = false;
+    private float x = 0;
+    private float y = 0;
 
     public SwipeRecyclerView(Context context) {
         super(context);
@@ -27,14 +29,12 @@ public class SwipeRecyclerView extends RecyclerView {
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-
-
-
+        x = e.getX();
+        y = e.getY();
         switch (e.getAction()){
             case MotionEvent.ACTION_MOVE:
-                e.getX();
-                Adapter adapter = getAdapter();
 
+//                smoothScrollToPosition();
                 break;
         }
 
