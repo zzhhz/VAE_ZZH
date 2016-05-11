@@ -14,6 +14,7 @@ import com.zzh.blur.BlurActivity;
 import com.zzh.dialog.DialogsActivity;
 import com.zzh.facedetector.FacedetectorActivity;
 import com.zzh.facedetector.PermissionActivity;
+import com.zzh.foldercell.FolderCellListViewActivity;
 import com.zzh.foldercell.FolderCellSimpleActivity;
 import com.zzh.html5.HttpActivity;
 import com.zzh.html5.activity.Html5Activity;
@@ -92,6 +93,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button27).setOnClickListener(this);
         findViewById(R.id.button28).setOnClickListener(this);
         findViewById(R.id.button29).setOnClickListener(this);
+        findViewById(R.id.button30).setOnClickListener(this);
     }
 
     @Override
@@ -111,6 +113,11 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -259,6 +266,11 @@ public class MainActivity extends BaseActivity {
             case R.id.button29:
                 Intent intent29 = new Intent(mContext, LayoutAnimActivity.class);
                 startActivity(intent29);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button30:
+                Intent intent30 = new Intent(mContext, FolderCellListViewActivity.class);
+                startActivity(intent30);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
             default:

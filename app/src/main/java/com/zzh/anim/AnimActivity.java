@@ -116,7 +116,7 @@ public class AnimActivity extends BaseActivity {
      * 模拟物理降落, 降落的控件有一个向上弹起的过程
      */
     private void startDropDownAnimation() {
-        PropertyValuesHolder holderY  = PropertyValuesHolder.ofFloat("Y", 0, DensityUtils.getDisplayHeight(mContext) - mView.getHeight() - DensityUtils.dp2px(mContext, 16));
+        PropertyValuesHolder holderY  = PropertyValuesHolder.ofFloat("Y", 0, DensityUtils.getDisplayHeight(mContext) - mView.getHeight() - DensityUtils.dp2px(mContext, 16) * 2);
         ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(mView, holderY);
         anim.setInterpolator(new BounceInterpolator());
         anim.setDuration(3000);
