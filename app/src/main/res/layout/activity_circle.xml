@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zzh.image.CircleActivity">
-    <com.zzh.image.widget.CircleImageView
+    <com.zzh.image.widget.CircleImageViewB
         android:id="@+id/imageView_circle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:border_thickness="5dp"
-        android:layout_margin="20dp"
-        app:border_outside_color="@color/colorPrimary"
-        android:src="@mipmap/ly_1"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <com.zzh.vae.widget.RingCircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView_circle"/>
 
 
 </RelativeLayout>

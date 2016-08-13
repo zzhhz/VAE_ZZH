@@ -44,6 +44,13 @@
 
     <dimen name="font_size_new_tag">11sp</dimen>
     <dimen name="padding_new_tag">3dp</dimen>
+    <dimen name="dimen_distance10dp">10dp</dimen>
+    <dimen name="dimen_distance80dp">80dp</dimen>
+    <dimen name="dimen_distance30dp">30dp</dimen>
+    <dimen name="dimen_distance5dp">5dp</dimen>
+    <dimen name="dimen_distance20dp">20dp</dimen>
+    <dimen name="dimen_distance15dp">15dp</dimen>
+    <dimen name="font_size12sp">12sp</dimen>
 
 
 </resources>

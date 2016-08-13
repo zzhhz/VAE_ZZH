@@ -16,6 +16,7 @@ import com.zzh.vae.widget.DragVideoView;
 
 /**
  * Created by zzh on 2016/1/29.
+ * 类似youtube上播放视频,视频可以拖动,放在屏幕的右下角
  */
 public class SurfaceActivity extends BaseActivity implements MediaPlayer.OnPreparedListener, SurfaceHolder.Callback, DragVideoView.Callback {
 

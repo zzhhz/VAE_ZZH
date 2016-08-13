@@ -77,10 +77,14 @@ public class CircleImageView extends ImageView {
             caculateCircle(canvas);
         }
         int radius = getCircleRadius(canvas);
-        Bitmap local = ((BitmapDrawable) getDrawable()).getBitmap();
-        Bitmap bitmap = local.copy(Bitmap.Config.ARGB_8888, true);
-        Bitmap circle = getCroppedRoundBitmap(bitmap, radius);
-        canvas.drawBitmap(circle, mBorderThickness, mBorderThickness, null);
+        try {
+            Bitmap local = ((BitmapDrawable) getDrawable()).getBitmap();
+            Bitmap bitmap = local.copy(Bitmap.Config.ARGB_8888, true);
+            Bitmap circle = getCroppedRoundBitmap(bitmap, radius);
+            canvas.drawBitmap(circle, mBorderThickness, mBorderThickness, null);
+        } catch (Exception ex){
+            return;
+        }
 
     }
 

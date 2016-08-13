@@ -227,4 +227,29 @@
         android:id="@+id/button30"
         android:layout_alignTop="@+id/button3"
         android:layout_toEndOf="@+id/button3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名医专家"
+        android:id="@+id/button31"
+        android:layout_alignTop="@+id/button30"
+        android:layout_toEndOf="@+id/button30"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="转场动画"
+        android:id="@+id/button32"
+        android:layout_below="@+id/button3"
+        android:layout_toEndOf="@+id/button3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试对话框"
+        android:id="@+id/button33"
+        android:layout_below="@+id/button30"
+        android:layout_toRightOf="@+id/button32"
+        android:layout_toEndOf="@+id/button32"/>
 </RelativeLayout>

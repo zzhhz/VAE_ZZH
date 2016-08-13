@@ -92,6 +92,23 @@
         <activity android:name="com.zzh.anim.ElasticityActivity"/>
         <activity android:name="com.zzh.foldercell.FolderCellListViewActivity">
         </activity>
+        <activity android:name="com.zzh.foldercell.ExpertActivity">
+        </activity>
+        <activity android:name="com.zzh.foldercell.ExpertV2Activity">
+        </activity>
+        <activity android:name="com.zzh.transactivity.TranslateActivity">
+        </activity>
+        <activity android:name="com.zzh.fadingbar.FadingActionBarActivity">
+        </activity>
+        <activity
+            android:name="com.zzh.fadingbar.ScrollViewActivity"
+            android:theme="@style/AppThemeBar"/>
+        <activity android:name="com.zzh.glide.GlideActivity">
+        </activity>
+        <activity android:name="com.zzh.dialog.DialogUtilsActivity">
+        </activity>
+        <activity android:name="com.zzh.foldercell.FolderActivity">
+        </activity>
     </application>
 
 </manifest>

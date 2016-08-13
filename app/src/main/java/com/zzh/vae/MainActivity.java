@@ -1,8 +1,11 @@
 package com.zzh.vae;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +14,16 @@ import com.zzh.anim.AnimActivity;
 import com.zzh.anim.LayoutAnimActivity;
 import com.zzh.anim.PropertyAnimationActivity;
 import com.zzh.blur.BlurActivity;
+import com.zzh.brokenview.BrokenActivity;
+import com.zzh.dialog.DialogUtilsActivity;
 import com.zzh.dialog.DialogsActivity;
 import com.zzh.facedetector.FacedetectorActivity;
 import com.zzh.facedetector.PermissionActivity;
+import com.zzh.fadingbar.ScrollViewActivity;
+import com.zzh.foldercell.ExpertActivity;
 import com.zzh.foldercell.FolderCellListViewActivity;
 import com.zzh.foldercell.FolderCellSimpleActivity;
 import com.zzh.html5.HttpActivity;
-import com.zzh.html5.activity.Html5Activity;
 import com.zzh.image.CircleActivity;
 import com.zzh.image.SelectImgActivity;
 import com.zzh.image.StagActivity;
@@ -29,6 +35,7 @@ import com.zzh.qrc.ScanQRActivity;
 import com.zzh.recycler.AnimRecyclerActivity;
 import com.zzh.retrofit.OkHttpActivity;
 import com.zzh.retrofit.RetrofitActivity;
+import com.zzh.transactivity.TranslateActivity;
 import com.zzh.vae.activity.SlidingActivity;
 import com.zzh.vae.activity.SurfaceActivity;
 import com.zzh.vae.base.BaseActivity;
@@ -94,6 +101,9 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.button28).setOnClickListener(this);
         findViewById(R.id.button29).setOnClickListener(this);
         findViewById(R.id.button30).setOnClickListener(this);
+        findViewById(R.id.button31).setOnClickListener(this);
+        findViewById(R.id.button32).setOnClickListener(this);
+        findViewById(R.id.button33).setOnClickListener(this);
     }
 
     @Override
@@ -128,7 +138,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.button2:
-                Intent intent1 = new Intent(mContext, Html5Activity.class);
+                Intent intent1 = new Intent(mContext, BrokenActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.button3:
@@ -273,9 +283,37 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent30);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;
+            case R.id.button31:
+                Intent intent31 = new Intent(mContext, ExpertActivity.class);
+                startActivity(intent31);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                break;
+            case R.id.button32:
+                //translateActivity();
+                Intent intent23 = new Intent(mContext, ScrollViewActivity.class);
+
+                startActivity(intent23);
+                break;
+            case R.id.button33:
+                //translateActivity();
+                Intent intent33 = new Intent(mContext, DialogUtilsActivity.class);
+
+                startActivity(intent33);
+                break;
             default:
                 showMessage("没有做任何处理");
                 break;
+        }
+    }
+
+    private void translateActivity() {
+        Intent intent32 = new Intent(mContext, TranslateActivity.class);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP){
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(findViewById(R.id.button32),"btn"));
+            startActivity(intent32, options.toBundle());
+        } else {
+            startActivity(intent32);
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         }
     }
 }

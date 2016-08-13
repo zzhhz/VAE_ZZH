@@ -2,11 +2,8 @@ package com.zzh.qrc;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +20,6 @@ import com.google.zxing.Result;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.common.StringUtils;
-import com.google.zxing.oned.rss.RSSUtils;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.zzh.vae.R;
@@ -49,6 +44,8 @@ public class QRCActivity extends BaseActivity {
     private static String MSGINFO = "http://zzhhz.blog.51cto.com/";
     private TextView textView_msg;
     private ImageView imageView_qrc;
+    private ImageView mImageView_c;
+    private ImageView mImageView_b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +60,8 @@ public class QRCActivity extends BaseActivity {
     protected void initView() {
         imageView_qrc = (ImageView) findViewById(R.id.imageView_qrc);
         textView_msg = (TextView) findViewById(R.id.textView_msg);
+        mImageView_c = (ImageView) findViewById(R.id.imageView_c);
+        mImageView_c = (ImageView) findViewById(R.id.imageView_b);
     }
 
     @Override
@@ -131,6 +130,8 @@ public class QRCActivity extends BaseActivity {
             Bitmap bitmap = Bitmap.createBitmap(QR_WIDTH, QR_HEIGHT, Bitmap.Config.ARGB_8888); //
             bitmap.setPixels(px, 0, QR_WIDTH, 0, 0, QR_WIDTH, QR_HEIGHT);
             imageView_qrc.setImageBitmap(bitmap);
+            mImageView_c.setImageBitmap(bitmap);
+            mImageView_b.setImageBitmap(bitmap);
         } catch (WriterException we) {
 
             we.printStackTrace();

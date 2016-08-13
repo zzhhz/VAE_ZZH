@@ -7,14 +7,14 @@
     android:fitsSystemWindows="true"
     tools:context="com.zzh.vae.activity.SlidingActivity">
 
-    <com.zzh.vae.widget.SlidingMenu
+    <com.zzh.vae.widget.SlideView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/img_frame_background"
         zzh:rightPadding="80dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -28,5 +28,5 @@
             </LinearLayout>
 
         </LinearLayout>
-    </com.zzh.vae.widget.SlidingMenu>
+    </com.zzh.vae.widget.SlideView>
 </RelativeLayout>
